@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { TableModule } from 'primeng/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './screens/login/login/login.component';
@@ -33,7 +33,8 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

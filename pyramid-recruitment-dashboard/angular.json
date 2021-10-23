@@ -23,7 +23,11 @@
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "node_modules/primeng/resources/primeng.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/themes/nova-accent/theme.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -35,7 +39,7 @@
               "node_modules/bootstrap-notify/bootstrap-notify.js",
               "node_modules/chartist/dist/chartist.js"
             ],
-            "allowedCommonJsDependencies" : [
+            "allowedCommonJsDependencies": [
               "rxjs/add/operator/filter",
               "jquery",
               "chartist"
@@ -66,8 +70,8 @@
               ]
             },
             "development": {
-             "buildOptimizer": false,
-             "optimization": {
+              "buildOptimizer": false,
+              "optimization": {
                 "scripts": true,
                 "styles": {
                   "minify": false,
@@ -75,8 +79,8 @@
                 },
                 "fonts": true
               },
-             "outputHashing": "all"
-           }
+              "outputHashing": "all"
+            }
           }
         },
         "serve": {
