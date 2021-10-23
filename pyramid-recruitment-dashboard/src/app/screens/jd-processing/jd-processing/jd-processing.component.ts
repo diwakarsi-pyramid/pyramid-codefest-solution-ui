@@ -9,19 +9,35 @@ import { LoaderService } from 'app/services/loader.service';
 })
 export class JdProcessingComponent implements OnInit {
 
+  colsFile = [];
+  colsValue: any;
+
   constructor(
     private loaderService: LoaderService,
     private jdService: JdProcessingService
   ) { }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData() {
+
     this.loaderService.changeRequestCount(1);
     this.jdService.fetchJDs().subscribe(data => {
       this.loaderService.changeRequestCount(-1);
       if (data) {
-        console.log('Fteching data:::', data)
+        Object.keys(data[0]).forEach(key => {
+          let obj = {};
+          obj['header'] = key;
+          obj['field'] = key;
+          this.colsFile.push(obj)
+        })
+        this.colsValue = data;
       }
-    })
+    });
+    
   }
+
 
 }

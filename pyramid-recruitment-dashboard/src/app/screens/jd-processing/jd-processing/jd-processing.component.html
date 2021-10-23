@@ -1,6 +1,58 @@
-<div class="main-content">
+<div class="content">
   <div class="content-header">
     <h3>Job Descriptions:</h3>
     <button class="btn btn-success">Add New Job</button>
+  </div>
+
+  <div class="">
+    <p-table class="table" #dt [columns]="colsFile" [value]=colsValue [paginator]="true" [rows]="10" [sortOrder]="-1"
+      [resizableColumns]="true" selectionMode="" [reorderableColumns]="true" *ngIf="colsFile.length>0 ">
+
+      <ng-template pTemplate="caption">
+        <div class="caption ui-helper-clearfix">
+          <div class="dataSourceMarginApplied">
+            <img alt="" id="imgColumnToggle" title="Click on choose columns." class="imgCaption"
+              src="../../assets/img/columnToggle_icon.png">
+          </div>
+          <span class="tabledivMultiselect" *ngIf="showMultiselect">
+            <p-multiSelect class="labels " [options]="colsFile" optionLabel="header" defaultLabel="Choose Columns"
+              [(ngModel)]="selectedColumnsFile" selectedItemsLabel=" {0} columns selected" filterPlaceHolder="Choose.."
+              displaySelectedLabel="false">
+            </p-multiSelect>
+
+          </span>
+          <span class="searchDiv">
+            <i class="fa fa-search searchIcon">
+
+            </i>
+            <input type="text" pInputText placeholder="Global Filter..."
+              (input)="dt.filterGlobal($event.target.value, 'contains')" class="inputI table-input">
+          </span>
+
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header" let-columns>
+        <tr class="datasourceRow">
+          <th class="table_header,datasourceCol" *ngFor="let col of columns" pResizableColumn pReorderableColumn>
+            <span [ngSwitch]="col.field" class="col-md-8 tableHead">
+              <input class="table-input" *ngSwitchCase="col.field" pInputText type="text" [placeholder]="col.header"
+                (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+            </span>
+            <span [pSortableColumn]="col.field" class="col-md-3  sortColum">
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+            </span>
+
+          </th>
+        </tr>
+
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr class="datasourceRow" [pSelectableRow]="rowData">
+          <td class="datasourceCol" *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
   </div>
 </div>

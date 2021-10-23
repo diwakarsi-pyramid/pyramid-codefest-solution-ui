@@ -5,11 +5,25 @@
   height: 100%;
   padding: 25px;
 
-  .main-content {
+  .content {
+    padding: 20px 50px;
+    
     .content-header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+
+    .table-input {
+      border: none;
+      border-bottom: 1px solid #999;
+      font-size: 14px;
+      padding: 5px 0 0 5px;
+      color: #999;
+    }
+
+    ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+      background: #f9f9f9;
     }
   }
 }
