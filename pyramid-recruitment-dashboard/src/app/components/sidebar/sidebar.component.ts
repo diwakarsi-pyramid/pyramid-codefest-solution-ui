@@ -21,7 +21,7 @@ export class SidebarComponent implements OnInit {
     { path: '/jd-processing', title: 'JD Processing', icon: 'dashboard', class: '' },
     { path: '/resume-processing', title: 'Resume Processing', icon: 'person', class: '' },
     { path: '/matching-resumes', title: 'Matching Resumes', icon: 'content_paste', class: '' },
-    { path: '/feedbacks', title: 'Feedbacks', icon: 'library_books', class: '' },
+    { path: '/feedbacks', title: 'Candidate Details', icon: 'library_books', class: '' },
   ];
 
 
