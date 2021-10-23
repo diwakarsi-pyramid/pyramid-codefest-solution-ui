@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
+import { RouterModule } from '@angular/router';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { ComponentsModule } from './components/components.module';
     // FooterComponent
   ],
   imports: [
+    BrowserModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

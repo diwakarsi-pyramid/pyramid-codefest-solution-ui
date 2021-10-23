@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderTilesComponent } from './loader-tiles/loader-tiles.component';
 
 @NgModule({
   imports: [
@@ -14,9 +16,12 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoaderComponent,
+    LoaderTilesComponent
   ],
   exports: [
+    LoaderComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent

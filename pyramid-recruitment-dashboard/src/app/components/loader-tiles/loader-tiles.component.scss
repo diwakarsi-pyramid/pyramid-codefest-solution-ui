@@ -1,0 +1,91 @@
+#squares {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
+}
+
+.square {
+  border-radius: 3px;
+  background-color: lightgray;
+  margin: 0 2px;
+  height: 20px;
+  width: 20px;
+  -webkit-animation: fadeIt 3s ease-in-out infinite;
+  -moz-animation: fadeIt 3s ease-in-out infinite;
+  -o-animation: fadeIt 3s ease-in-out infinite;
+  animation: fadeIt 3s ease-in-out infinite;
+
+  &:nth-child(1) {
+    -webkit-animation-delay: -2s;
+    -moz-animation-delay: -2s;
+    -o-animation-delay: -2s;
+    animation-delay: -2s;
+  }
+
+  &:nth-child(2) {
+    -webkit-animation-delay: -1s;
+    -moz-animation-delay: -1s;
+    -o-animation-delay: -1s;
+    animation-delay: -1s;
+  }
+}
+
+@-webkit-keyframes fadeIt {
+  0% {
+    background-color: gray;
+  }
+  30% {
+    background-color: lightgray;
+  }
+  60% {
+    background-color: lightgray;
+  }
+  100% {
+    background-color: gray;
+  }
+}
+
+@-moz-keyframes fadeIt {
+  0% {
+    background-color: gray;
+  }
+  30% {
+    background-color: lightgray;
+  }
+  60% {
+    background-color: lightgray;
+  }
+  100% {
+    background-color: gray;
+  }
+}
+
+@-o-keyframes fadeIt {
+  0% {
+    background-color: gray;
+  }
+  30% {
+    background-color: lightgray;
+  }
+  60% {
+    background-color: lightgray;
+  }
+  100% {
+    background-color: gray;
+  }
+}
+
+@keyframes fadeIt {
+  0% {
+    background-color: gray;
+  }
+  30% {
+    background-color: lightgray;
+  }
+  60% {
+    background-color: lightgray;
+  }
+  100% {
+    background-color: gray;
+  }
+}
